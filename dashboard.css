@@ -1,0 +1,62 @@
+body{
+    margin: 0px auto;
+}
+
+.main{
+    margin: 0px auto;
+    margin-top: 10%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid blue;
+    width:40%;
+    height: 50vh;
+
+    text-align: center;
+
+}
+
+.details{
+    margin: 20px;
+    font-size: large;
+}
+
+#head{
+    background-color: skyblue;
+}
+
+.dash{
+    margin: 0px auto;
+    width: 60%;
+    background-color: yellow;
+    text-align: left;
+
+    font-family: Andale Mono, monospace;
+}
+
+.changePassword{
+    display: none;
+    position: relative;
+    top:-10%;
+    left:-90%;
+    background-color: blue;
+    width: 200%;
+    padding-left: 10rem;
+
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+#changePass{
+    width: 50%;
+}
+
+#logOut{
+    width: 50%;
+}
