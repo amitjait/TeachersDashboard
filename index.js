@@ -1,3 +1,15 @@
+function checkForLogin(){
+    if(localStorage.getItem("isLogin") == true){
+
+        dashBoard();
+        
+        
+        window.location.href = "dashboard.html";
+    }
+}
+
+checkForLogin();
+
 
 let signform = document.forms['signUp'];
 let sbtn = document.getElementById('signUp');
@@ -164,15 +176,8 @@ let signUpform = document.forms['login'];
 
 let teacher;
 
+
 function login(){
-
-    if(localStorage.getItem("isLogin") == true){
-
-        dashBoard();
-        
-        
-        window.location.href = "dashboard.html";
-    }
 
     let email = signUpform['email'].value;
     let password = signUpform['pwd'].value;
@@ -242,9 +247,9 @@ function dashBoard(){
     let data = localStorage.getItem('teacher');
     let teacher = JSON.parse(data);
 
-    name.innerHTML = `Name : ${teacher.name}`;
-    email.innerHTML = `Email ID : ${teacher.email}`;
-    token.innerHTML = `Your Token : ${teacher.token}`;
+    name.innerHTML = `Welcome back : ${teacher.name}`;
+    email.innerHTML = `Your Email ID : ${teacher.email}`;
+    // token.innerHTML = `Your Token : ${teacher.token}`;
 
 
     
@@ -252,8 +257,37 @@ function dashBoard(){
 
 function logOut(){
     localStorage.setItem("isLogin", false);
-
     window.location.href = "login.html";
+}
+
+function changePass(){
+    let old = document.getElementById("old").value;
+    let newPass = document.getElementById('newPass').value;
+    let conPass = document.getElementById("confirm").value;
+
+
+    if(newPass != conPass){
+        alert("New Password and Confirm Password is not same!");
+    }else{
+        let data = localStorage.getItem('teacher');
+        let teacher = JSON.parse(data);
+
+        let userData = localStorage.getItem('data');
+        let users = JSON.parse(userData);
+
+
+        for(let i=0; i<users.length; i++){
+            if(users[i].email == teacher.email){
+                users[i]["pass"] = newPass;
+                break;
+            }
+        }
+
+        localStorage.setItem('data', JSON.stringify(users));
+
+        alert("Password Changed!");
+    }
+
 }
 
 

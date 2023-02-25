@@ -1,17 +1,14 @@
 body{
     margin: 0px auto;
+    background-color: lightblue;
 }
 
 .main{
     margin: 0px auto;
-    margin-top: 10%;
-
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    border: 1px solid blue;
-    width:40%;
-    height: 50vh;
+
 
     text-align: center;
 
@@ -28,29 +25,23 @@ body{
 
 .dash{
     margin: 0px auto;
-    width: 60%;
-    background-color: yellow;
+    width: 90%;
     text-align: left;
 
     font-family: Andale Mono, monospace;
 }
 
 .changePassword{
-    display: none;
-    position: relative;
-    top:-10%;
-    left:-90%;
-    background-color: blue;
-    width: 200%;
-    padding-left: 10rem;
+    margin-left : 20px;
+}
 
+.changePassword input{
+    width:50%;
+    height: 20px;
 }
 
 .btns{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    text-align: center;
+
 }
 
 #changePass{
@@ -59,4 +50,56 @@ body{
 
 #logOut{
     width: 50%;
+}
+
+#out {
+	box-shadow:inset 0px 1px 0px 0px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#74ad5a;
+	border:1px solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+
+    border-radius: 5%;;
+}
+#out:hover {
+	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+	background-color:#68a54b;
+}
+#out:active {
+	position:relative;
+	top:1px;
+}
+
+
+#change{
+    box-shadow:inset 0px 1px 0px 0px #9acc85;
+	background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+	background-color:#6fdcd1;
+	border:1px solid #c6e4b6;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+
+    border-radius: 5%;
+}
+
+#change:hover {
+	background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+	background-color:#269b99;
+}
+#change:active {
+	position:relative;
+	top:1px;
 }
