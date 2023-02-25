@@ -247,7 +247,7 @@ function dashBoard(){
     let data = localStorage.getItem('teacher');
     let teacher = JSON.parse(data);
 
-    name.innerHTML = `Welcome back : ${teacher.name}`;
+    name.innerHTML = `Welcome back ${teacher.name}`;
     email.innerHTML = `Your Email ID : ${teacher.email}`;
     // token.innerHTML = `Your Token : ${teacher.token}`;
 
