@@ -1,8 +1,59 @@
 body{
     margin: 0px auto;
-    text-align: center;
+    /* text-align: center; */
     background-color: lightblue;
 }
+
+.header{
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: white;
+}
+
+.logo{
+    position: relative;
+    width: 50%;
+    left :10%;
+    /* border: 1px solid white; */
+    font-size: x-large;
+}
+
+.list{
+    position: relative;
+    width: 50%;
+    text-align: right;
+
+    /* border: 1px solid white; */
+}
+.listItems{
+    display: flex;
+    position: relative;
+    width: fit-content;
+    float: right;
+    right: 20%; 
+    font-size: large;
+
+    /* border: 1px solid white; */
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    /* width: 50% */
+}
+
+li:hover{
+    cursor: pointer;
+}
+
 
 h1{
     width: 100%;
@@ -27,6 +78,7 @@ h1{
 }
 
 .signUp{
+    margin-top: 5%;
     text-align: left;
     margin-left: 10px;
     width: 100%;
