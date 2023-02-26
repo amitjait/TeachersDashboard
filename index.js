@@ -278,8 +278,12 @@ function changePass(){
 
         for(let i=0; i<users.length; i++){
             if(users[i].email == teacher.email){
-                users[i]["pass"] = newPass;
-                break;
+                if(old == users[i]["pass"]){
+                    users[i]["pass"] = newPass;
+                    break;
+                }else{
+                    alert("Enter Correct Old Password!")
+                }
             }
         }
 
