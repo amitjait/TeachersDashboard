@@ -279,17 +279,26 @@ function changePass(){
         for(let i=0; i<users.length; i++){
             if(users[i].email == teacher.email){
                 if(old == users[i]["pass"]){
+                    if(!ValidPassword(newPass)){
+                        alert("Enter a Valid new Password!");
+                        return;
+                    }
                     users[i]["pass"] = newPass;
-                    break;
+                    
+
+
+                    localStorage.setItem('data', JSON.stringify(users));
+
+                    alert("Password Changed!");
+
+                    return;
                 }else{
                     alert("Enter Correct Old Password!")
                 }
             }
         }
 
-        localStorage.setItem('data', JSON.stringify(users));
-
-        alert("Password Changed!");
+        
     }
 
 }
