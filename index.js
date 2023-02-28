@@ -1,14 +1,4 @@
-function checkForLogin(){
-    if(localStorage.getItem("isLogin") == true){
 
-        dashBoard();
-        
-        
-        window.location.href = "dashboard.html";
-    }
-}
-
-checkForLogin();
 
 
 let signform = document.forms['signUp'];
@@ -18,6 +8,7 @@ let sbtn = document.getElementById('signUp');
 if(sbtn != null){
     sbtn.addEventListener('click', signUp)  ;
 }
+
 
 
 function signUp(event){
@@ -176,7 +167,6 @@ let signUpform = document.forms['login'];
 
 let teacher;
 
-
 function login(){
 
     let email = signUpform['email'].value;
@@ -239,17 +229,22 @@ function generateString(length) {
 
 
 function dashBoard(){
+
     
     let name = document.getElementById('name');
     let email = document.getElementById('email');
     let token = document.getElementById('token');
+
+    if(name == null || email == null || token == null) return;
     
     let data = localStorage.getItem('teacher');
+    // console.log(data);
+
     let teacher = JSON.parse(data);
 
-    name.innerHTML = `Welcome back ${teacher.name}`;
-    email.innerHTML = `Your Email ID : ${teacher.email}`;
-    // token.innerHTML = `Your Token : ${teacher.token}`;
+    name.innerHTML = `Name : ${teacher.name}`;
+    email.innerHTML = `Email ID : ${teacher.email}`;
+    token.innerHTML = `Your Token : ${teacher.token}`;
 
 
     
@@ -257,54 +252,19 @@ function dashBoard(){
 
 function logOut(){
     localStorage.setItem("isLogin", false);
+    console.log(localStorage.getItem("isLogin"));
+
     window.location.href = "login.html";
 }
 
-function changePass(){
-    let old = document.getElementById("old").value;
-    let newPass = document.getElementById('newPass').value;
-    let conPass = document.getElementById("confirm").value;
 
 
-    if(newPass != conPass){
-        alert("New Password and Confirm Password is not same!");
-    }else{
-        let data = localStorage.getItem('teacher');
-        let teacher = JSON.parse(data);
-
-        let userData = localStorage.getItem('data');
-        let users = JSON.parse(userData);
-
-
-        for(let i=0; i<users.length; i++){
-            if(users[i].email == teacher.email){
-                if(old == users[i]["pass"]){
-                    if(!ValidPassword(newPass)){
-                        alert("Enter a Valid new Password!");
-                        return;
-                    }
-                    users[i]["pass"] = newPass;
-                    
-
-
-                    localStorage.setItem('data', JSON.stringify(users));
-
-                    alert("Password Changed!");
-
-                    return;
-                }else{
-                    alert("Enter Correct Old Password!")
-                }
-            }
-        }
-
-        
+if(localStorage.getItem("isLogin") == 'true' && window.location.href == "http://127.0.0.1:5500/dashboard.html"){
+    dashBoard();
+}else{
+    if(localStorage.getItem("isLogin") == 'true'){
+        console.log(localStorage.getItem("isLogin"), "in");
+        window.location.href = "dashboard.html";
     }
-
 }
-
-
-
-dashBoard();
-
 
