@@ -9,6 +9,14 @@ if(sbtn != null){
     sbtn.addEventListener('click', signUp)  ;
 }
 
+function singUpPage(){
+    window.location.href = "index.html";
+}
+
+function singInPage(){
+    window.location.href = "login.html";
+}
+
 
 
 function signUp(event){
