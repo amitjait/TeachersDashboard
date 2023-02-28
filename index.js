@@ -259,7 +259,7 @@ function logOut(){
 
 
 
-if(localStorage.getItem("isLogin") == 'true' && window.location.href == "https://teacher-dashboard.netlify.app//dashboard.html"){
+if(localStorage.getItem("isLogin") == 'true' && window.location.href == "https://teacher-dashboard.netlify.app/dashboard.html"){
     dashBoard();
 }else{
     if(localStorage.getItem("isLogin") == 'true'){
