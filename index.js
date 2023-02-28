@@ -259,12 +259,12 @@ function logOut(){
 
 
 
-// if(localStorage.getItem("isLogin") == 'true' && window.location.href == "http://127.0.0.1:5500/dashboard.html"){
-//     dashBoard();
-// }else{
-//     if(localStorage.getItem("isLogin") == 'true'){
-//         console.log(localStorage.getItem("isLogin"), "in");
-//         window.location.href = "dashboard.html";
-//     }
-// }
+if(localStorage.getItem("isLogin") == 'true' && window.location.href == "https://teacher-dashboard.netlify.app//dashboard.html"){
+    dashBoard();
+}else{
+    if(localStorage.getItem("isLogin") == 'true'){
+        console.log(localStorage.getItem("isLogin"), "in");
+        window.location.href = "dashboard.html";
+    }
+}
 
